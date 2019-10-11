@@ -6,6 +6,10 @@ jobs:
   build:
    runs-on: ubuntu-latest
    steps:
+     - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
      - name: Build docker image
        uses: zenato/docker-action@master
        with:
