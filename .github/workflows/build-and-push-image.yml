@@ -1,0 +1,13 @@
+name: Build and Push the Docker container
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  build:
+   action "build-and-push-to-docker-hub" {
+     uses = "pangzineng/Github-Action-One-Click-Docker@master"
+     secrets = [
+      "DOCKER_USERNAME", 
+      "DOCKER_PASSWORD"
+     ]
+   }
