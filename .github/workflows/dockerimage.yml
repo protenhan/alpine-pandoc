@@ -13,6 +13,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag $GITHUB_REPOSITORY:latest
     - name: Login to Dockerhub
-      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} $GITHUB_REPOSITORY:latest
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push the Docker Image
       run: docker push $GITHUB_REPOSITORY:latest
